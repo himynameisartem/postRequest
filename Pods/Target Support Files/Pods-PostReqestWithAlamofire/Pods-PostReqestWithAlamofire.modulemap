@@ -1,0 +1,6 @@
+framework module Pods_PostReqestWithAlamofire {
+  umbrella header "Pods-PostReqestWithAlamofire-umbrella.h"
+
+  export *
+  module * { export * }
+}
