@@ -74,7 +74,6 @@ extension StoreCollectionViewController: UICollectionViewDelegateFlowLayout {
         let availableWidth = collectionView.frame.width - paddingWidth
         let widthPerItem = availableWidth / itemPerRow
         let heigtPerItem = widthPerItem + widthPerItem / 2
-        print(widthPerItem, "   ", heigtPerItem)
         return CGSize(width: widthPerItem, height: heigtPerItem)
     }
     

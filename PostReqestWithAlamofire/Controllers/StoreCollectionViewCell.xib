@@ -4,7 +4,9 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,47 +19,126 @@
                 <rect key="frame" x="0.0" y="0.0" width="394" height="576"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nb9-sA-yWe">
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" indicatorStyle="black" dataMode="none" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nb9-sA-yWe">
                         <rect key="frame" x="0.0" y="0.0" width="394" height="376"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="Nb9-sA-yWe" secondAttribute="height" multiplier="197:188" id="fbU-Up-M2s"/>
-                            <constraint firstAttribute="height" constant="376" id="gTv-uM-Jas"/>
+                            <constraint firstAttribute="width" secondItem="Nb9-sA-yWe" secondAttribute="height" multiplier="197:188" id="CM5-Nq-ZRl"/>
                         </constraints>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7TX-5n-Caw">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7TX-5n-Caw">
                             <size key="itemSize" width="410" height="351"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="gTv-uM-Jas"/>
-                            </mask>
-                        </variation>
                         <connections>
                             <outlet property="dataSource" destination="-1" id="Ar7-a1-h2j"/>
                             <outlet property="delegate" destination="-1" id="WeF-Zd-ULd"/>
                         </connections>
                     </collectionView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yd7-kR-Eao">
+                        <rect key="frame" x="10" y="386" width="374" height="180"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wG7-ZV-08A">
+                                <rect key="frame" x="0.0" y="0.0" width="374" height="39"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Футболка &quot;Бобер&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0k-kc-Giq">
+                                        <rect key="frame" x="0.0" y="0.0" width="146" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="1800 Р" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ims-l2-XYk">
+                                        <rect key="frame" x="154" y="0.0" width="220" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Hzw-Kr-CgY">
+                                <rect key="frame" x="0.0" y="47" width="374" height="39"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Премиальный хлопок Плотность 180 г/м2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NPG-XC-nAB">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NEn-No-Ve5">
+                                <rect key="frame" x="0.0" y="94" width="374" height="39"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выбрать размер" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2Dh-YL-oht">
+                                        <rect key="frame" x="0.0" y="0.0" width="132.5" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" highlighted="YES" selected="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cub-9N-hcn">
+                                        <rect key="frame" x="140.5" y="0.0" width="233.5" height="39"/>
+                                        <menu key="menu" id="9yZ-iR-7ZA">
+                                            <children>
+                                                <command title="X" id="n5m-vK-lPn"/>
+                                                <command title="M" id="fnT-PV-Mkd"/>
+                                            </children>
+                                        </menu>
+                                        <state key="normal" title="S"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JxX-IX-jdj">
+                                <rect key="frame" x="0.0" y="141" width="374" height="39"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dh2-Gs-Z65">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="39"/>
+                                        <color key="backgroundColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="В корзину">
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Hzw-Kr-CgY" firstAttribute="leading" secondItem="yd7-kR-Eao" secondAttribute="leading" id="Gxc-Dt-xkZ"/>
+                            <constraint firstAttribute="trailing" secondItem="Hzw-Kr-CgY" secondAttribute="trailing" id="yuZ-S0-buc"/>
+                        </constraints>
+                    </stackView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Nb9-sA-yWe" secondAttribute="bottom" constant="200" id="L6D-lW-nU0"/>
-                <constraint firstItem="Nb9-sA-yWe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="beA-2H-Mm8"/>
-                <constraint firstItem="Nb9-sA-yWe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="j4m-cq-jmF"/>
-                <constraint firstAttribute="trailing" secondItem="Nb9-sA-yWe" secondAttribute="trailing" id="m4F-Kt-OJ8"/>
+                <constraint firstAttribute="trailing" secondItem="Nb9-sA-yWe" secondAttribute="trailing" id="HMJ-Qg-x8c"/>
+                <constraint firstItem="Nb9-sA-yWe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Isv-cz-hsb"/>
+                <constraint firstItem="Nb9-sA-yWe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZM7-f7-gIy"/>
+                <constraint firstAttribute="trailing" secondItem="Nb9-sA-yWe" secondAttribute="trailing" id="aEY-8R-TEJ"/>
+                <constraint firstItem="Nb9-sA-yWe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bc6-vQ-imo"/>
+                <constraint firstItem="Nb9-sA-yWe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cFm-9J-PiN"/>
+                <constraint firstItem="yd7-kR-Eao" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="eJb-zq-eg8"/>
+                <constraint firstItem="yd7-kR-Eao" firstAttribute="top" secondItem="Nb9-sA-yWe" secondAttribute="bottom" constant="10" id="i8o-Ps-fxF"/>
+                <constraint firstAttribute="trailing" secondItem="yd7-kR-Eao" secondAttribute="trailing" constant="10" id="piK-Sx-Tin"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Nb9-sA-yWe" secondAttribute="bottom" constant="200" id="q6R-pY-s69"/>
+                <constraint firstAttribute="bottom" secondItem="yd7-kR-Eao" secondAttribute="bottom" constant="10" id="rpn-RJ-Kki"/>
             </constraints>
             <size key="customSize" width="394" height="576"/>
             <connections>
                 <outlet property="imageCollectionView" destination="Nb9-sA-yWe" id="Mw8-j2-pw9"/>
             </connections>
-            <point key="canvasLocation" x="326.25" y="157.5"/>
+            <point key="canvasLocation" x="326.25" y="157.3943661971831"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
